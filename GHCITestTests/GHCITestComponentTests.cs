@@ -36,14 +36,7 @@ namespace GHCITest.Tests
 
             var result = Rhino.Compute.GrasshopperCompute.EvaluateDefinition(definitionPath, trees);
             var data = result[0].InnerTree.First().Value[0].Data;
-            var parsed = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
-            var obj = Rhino.FileIO.File3dmObject.FromJSON(parsed);
-
-            Console.WriteLine("Result: {0}", obj.GetType());
-
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-
+            Assert.AreEqual(45, double.Parse(data));
         }
     }
 }

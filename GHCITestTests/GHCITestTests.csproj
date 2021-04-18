@@ -1,22 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>.NETFramework,Version=v4.8</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grasshopper" Version="7.4.21078.1001" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
     <PackageReference Include="coverlet.collector" Version="1.3.0" />
-    <PackageReference Include="RhinoCommon" Version="7.4.21078.1001" />
+    <PackageReference Include="Rhino3dm" Version="0.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GHCITest\GHCITest.csproj" />
+    <ProjectReference Include="..\GHCITest\GHCITest.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json.Rhino">
+      <HintPath>..\..\Newtonsoft.Json.Rhino.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

@@ -9,8 +9,8 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Grasshopper" Version="7.4.21078.1001" IncludeAssets="compile;build" />
-    <PackageReference Include="RhinoCommon" Version="7.4.21078.1001" />
+    <PackageReference Include="Grasshopper" Version="7.4.21078.1001" />
+    <PackageReference Include="Rhino3dm" Version="0.3.0" />
   </ItemGroup>
   
   <PropertyGroup Condition="$(Configuration) == 'Debug' AND $([MSBuild]::IsOSPlatform(Windows))">
