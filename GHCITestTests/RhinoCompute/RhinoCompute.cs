@@ -1,12 +1,12 @@
-using System;
-using System.IO;
-using Rhino.Geometry;
-using Rhino.Geometry.Intersect;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Rhino.Collections;
-using System.Runtime.Serialization;
+using Rhino.Geometry;
+using Rhino.Geometry.Intersect;
 
 namespace Rhino.Compute
 {
@@ -27,11 +27,11 @@ namespace Rhino.Compute
             if (string.IsNullOrWhiteSpace(AuthToken) && WebAddress.Equals("https://compute.rhino3d.com"))
                 throw new UnauthorizedAccessException("AuthToken must be set for compute.rhino3d.com");
 
-            for( int i=0; i<postData.Length; i++ )
+            for (int i = 0; i < postData.Length; i++)
             {
-                if( postData[i]!=null &&
+                if (postData[i] != null &&
                     postData[i].GetType().IsGenericType &&
-                    postData[i].GetType().GetGenericTypeDefinition() == typeof(Remote<>) )
+                    postData[i].GetType().GetGenericTypeDefinition() == typeof(Remote<>))
                 {
                     var mi = postData[i].GetType().GetMethod("JsonObject");
                     postData[i] = mi.Invoke(postData[i], null);
@@ -106,7 +106,7 @@ namespace Rhino.Compute
             // try api key (self-hosted compute)
             if (!string.IsNullOrWhiteSpace(ApiKey))
                 request.Headers.Add("RhinoComputeKey", ApiKey);
-            
+
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
                 streamWriter.Write(json);
@@ -140,7 +140,7 @@ namespace Rhino.Compute
 
         public object JsonObject()
         {
-            if( _url!=null )
+            if (_url != null)
             {
                 Dictionary<string, string> dict = new Dictionary<string, string>();
                 dict["url"] = _url;

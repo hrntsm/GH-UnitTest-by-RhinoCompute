@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Rhino.Compute;
 using Newtonsoft.Json;
+using Rhino.Compute;
 
 namespace GHCITest.Tests
 {
