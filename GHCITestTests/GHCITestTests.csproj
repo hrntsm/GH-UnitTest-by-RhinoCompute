@@ -16,12 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GHCITest\GHCITest.csproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="testgh.gh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

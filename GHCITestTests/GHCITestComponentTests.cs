@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using Rhino.Compute;
 
 namespace GHCITest.Tests
@@ -16,8 +15,8 @@ namespace GHCITest.Tests
         {
             ComputeServer.WebAddress = "http://localhost:8081/";
 
-            var definitionName = "testgh.gh";
-            var definitionPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            const string definitionName = "testgh.gh";
+            string definitionPath = Assembly.GetExecutingAssembly().Location;
             definitionPath = Path.GetDirectoryName(definitionPath);
             definitionPath = Path.Combine(definitionPath, definitionName);
 
@@ -34,8 +33,8 @@ namespace GHCITest.Tests
             trees.Add(param2);
 
 
-            var result = Rhino.Compute.GrasshopperCompute.EvaluateDefinition(definitionPath, trees);
-            var data = result[0].InnerTree.First().Value[0].Data;
+            List<GrasshopperDataTree> result = GrasshopperCompute.EvaluateDefinition(definitionPath, trees);
+            string data = result[0].InnerTree.First().Value[0].Data;
             Assert.AreEqual(45, double.Parse(data));
         }
     }

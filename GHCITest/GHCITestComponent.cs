@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using Grasshopper;
 using Grasshopper.Kernel;
-using Rhino.Geometry;
 
-namespace GHCITest
+namespace GHCITest.Component
 {
     public class GHCITestComponent : GH_Component
     {
@@ -52,7 +48,14 @@ namespace GHCITest
             if (!DA.GetData("A", ref A)) { return; }
             if (!DA.GetData("B", ref B)) { return; }
 
-            DA.SetData("Result", A + B);
+            double r = Sum(A, B);
+
+            DA.SetData("Result", r);
+        }
+
+        public static double Sum(double A, double B)
+        {
+            return A + B;
         }
 
         /// <summary>
