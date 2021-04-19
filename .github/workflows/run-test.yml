@@ -1,0 +1,11 @@
+name: run test
+on: push
+
+jobs:
+  run-test: 
+    runs-on: self-hosted
+
+    steps:
+      - uses: action/checkout@v2
+      - run: dotnet test
+
