@@ -7,5 +7,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Setup RhinoCompute
+        run: ../../../compute.geometry/compute.geometry.exe
       - run: dotnet test
 
