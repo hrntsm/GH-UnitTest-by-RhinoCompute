@@ -1,4 +1,4 @@
-name: run test
+name: Run Unit Test
 on: push
 
 jobs:
@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup RhinoCompute
-        run: ../../../compute.geometry/compute.geometry.exe
-      - run: dotnet test
+        run: |
+          Start-Process -FilePath ../../../compute.geometry/compute.geometry.exe
+          Start-Sleep -Seconds 5
+      - name: Run Unit Test
+        run: dotnet test
 
