@@ -23,7 +23,7 @@ The easiest way to do this is to install Hops.
 
 The easiest way to do this is to install Hops, see the following article.
 
-- [How to get started with Hops in Grasshopper](. /Try-Hops-component)
+- [Hops component](https://developer.rhino3d.com/guides/grasshopper/hops-component/)
 
 If you have installed Hops, for example ver0.4.7, you can find the data in the following folder.
 
