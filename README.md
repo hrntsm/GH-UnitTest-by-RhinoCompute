@@ -112,7 +112,7 @@ Of course, you can also use VisualStudio's features to create your own
 
 First, we need to get the SDK to use RhinoCompute. To download it, type the following in your browser.(need running RhinoCompute)
 
-> https://localhost:8081/sdk/csharp
+> http://localhost:8081/sdk/csharp
 
 Put the downloaded file in the same location as your test csproj file so that you can refer to it.
 
@@ -196,8 +196,7 @@ Because GitHub Actions runs in GitHub's virtual environment, it cannot create it
 
 The official documentation for the self-host runner is below. Please refer to it if necessary.
 
-- [About the self-host runner
-  ](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners)
+- [About the self-host runner](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners)
 
 In the repository that uses the self-hosted runner, press Add Runner at the bottom of Actions in Settings.
 
